@@ -228,6 +228,7 @@ void replaceCharacter(char ch[], int size){
 
   while(ch[index] != '\0'){
     if(ch[index] == '@'){
+     //insert space
       ch[index] = ' ';
     }
     index++;
