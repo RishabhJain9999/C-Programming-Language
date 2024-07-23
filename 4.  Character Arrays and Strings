@@ -66,6 +66,8 @@ int main() {
 
   return 0;
 }
+
+
   //METHOD - 2
   #include <iostream>
 #include<string.h>
@@ -76,10 +78,77 @@ int main() {
   char ch[100];
   cin.getline(ch,100);
 
+  //In-built function for finding the length of character array --> "strlen"
   cout<<"Length of character array is "<<strlen(ch)<<endl;
 
   return 0;
 }
+
+###############################################################################################################################
+
+Q-2 REVERSE A CHARACTER ARRAY
+
+//METHOD - 1
+#include<iostream>
+#include<string.h>
+
+using namespace std;
+
+void findReverse(char ch[], int size){
+
+  int start = 0;
+  int end = size-1;
+
+  while(start<end){
+    swap(ch[start],ch[end]);
+    start++;
+    end--;
+  }
+}
+
+int main(){
+
+  char ch[100];
+  //cin>>ch;
+  cin.getline(ch,100);
+
+  //ISME YEH LINE YAAD RAKHO IMPORTANT H. It is used to calculate the size of the array.
+  int len = strlen(ch);
+
+  findReverse(ch,len);
+
+  cout<<"Reversed array is "<<ch<<endl;
+
+}
+
+
+//METHOD - 2
+// #include<iostream>
+// #include<algorithm>  //for reverse
+// #include<string.h>  //for strlen
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+  char ch[100];
+  //cin>>ch;
+  cin.getline(ch,100);
+
+  int len = strlen(ch);
+
+  //In-buit function for reverse the character array --> "reverse"
+  reverse(ch,ch+len);
+
+  cout<<"Reversed array is "<<ch<<endl;
+
+}
+
+############################################################################################################################################
+
+
 
 
 
