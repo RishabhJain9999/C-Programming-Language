@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  //Creating a character array
+  char ch[10];
+
+  //Taking input
+  cin>>ch;
+
+  //Agar specifically first index pr input lena h
+  cin>>ch[1];
+
+  //Agar specifically 3rd index pr input lena h
+  cin>>ch[3];
+
+  //printing  hte character array
+  cout<<ch;
+
+  //Taking full line input
+  //ch --> array where we want to take the input.
+  //100 --> maximum size of the input that we can take.
+  cin.getline(ch,100);
+  
+  return 0;
+}
