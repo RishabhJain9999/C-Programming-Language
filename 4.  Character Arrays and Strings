@@ -437,6 +437,16 @@ if(str1.compare(str2) == 0){
 output -- Matching
 
 
+substr( , ) --> used to extract a particular part of a string.
+
+Ex-
+//8 index se 2 length ka word extract kr lo.
+string description = "My name is Rishabh Jain";
+cout<<description.substr(8,2)<<endl;
+
+output - is
+
+
 
 
 
