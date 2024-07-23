@@ -1,3 +1,8 @@
+QUESTIONS
+
+1.  Length of the character array!
+2.  Reverse a character array!
+
 #include <iostream>
 using namespace std;
 
@@ -22,6 +27,63 @@ int main() {
   //ch --> array where we want to take the input.
   //100 --> maximum size of the input that we can take.
   cin.getline(ch,100);
+
+  //Jab bhi hum character array meh input lete h toh last meh null character autmatically aa jaata ha that denotes the termination of string.
+
+  //ASCII value of null character is 0.
+
+  //Koi question agar string se TLE maar raha h then try it with character array. Character arrays are more efficient than strings.
+
+  Q-1 PRINT THE LENGTH OF CHARACTER ARRAY
+  //Loop ke through saare characters traverse karunga and jab null character '\0' aayga tab ruk jaunga.
+
+  //METHOD - 1
+    #include <iostream>
+using namespace std;
+
+int findLength(char ch[], int size){
+
+  int length = 0;
+
+  for(int i=0;i<size;i++){
+    if(ch[i] == '\0'){
+      break;
+    } else{
+      length++;
+    }
+  }
+  return length;
+}
+
+int main() {
+
+  char ch[100];
+  cin.getline(ch,100);
+
+  int len = findLength(ch,100);
+
+  cout<<"Length of character array is "<<len<<endl;
+
+  return 0;
+}
+  //METHOD - 2
+  #include <iostream>
+#include<string.h>
+using namespace std;
+
+int main() {
+
+  char ch[100];
+  cin.getline(ch,100);
+
+  cout<<"Length of character array is "<<strlen(ch)<<endl;
+
+  return 0;
+}
+
+
+
+
   
   return 0;
 }
