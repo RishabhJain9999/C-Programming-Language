@@ -7,6 +7,7 @@ QUESTIONS
 5. Replace @ with space
     input - My@name@is@Rishabh@Jain
     output - My name is Rishabh Jain
+6. Check Palindrome
 
 #include <iostream>
 using namespace std;
@@ -251,6 +252,42 @@ int main(){
 
 ########################################################################################################################################################
 
+6. Check whether it is a valid palindrome or not
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void chechPalindrome(char ch[], int len){
+
+  //len - length of the string/character array
+  int start = 0;
+  int end = len-1;
+
+  while(start<end){
+    if(ch[start]==ch[end]){
+      start++;
+      end--;
+    } else{
+      cout<<"Not a valid palindrome"<<endl;
+      return;
+    } 
+  }
+  cout<<"A valid palindrome"<<endl;
+  
+}
+
+int main(){
+
+  char ch[100];
+  cin.getline(ch,100);
+
+  int len = strlen(ch);
+
+  //agar isme len ki jagah 100 pass krte toh end 99th index pr aata and not at the end of actual
+  //character array toh error aata. Isliye len pass karenge.
+  chechPalindrome(ch,len);
+
+}
 
 
 
@@ -260,5 +297,52 @@ int main(){
 
 
   
+  return 0;
+}
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                                            STRINGS
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+  //creation
+  string name;
+
+  //input
+  cin>>name;
+
+  //Taking full line inputs
+  //name --> variable name jiske andar input le rahe h
+  getline(cin,name);
+
+  //print
+  cout<<"Printing name "<<name<<endl;
+
+  //printing first character
+  cout<<"First character "<<name[0]<<endl;
+
+  //Loop(Printing using loop)
+  int index = 0;
+  while(name[index] != '\0'){
+    cout<<"index --> "<<index<<" char--> "<<name[index]<<endl;
+    index++;
+
+  }
+
+  //character array meh hum "cin.getline()" ka use krte h whereas strings meh hum "getline()"
+  //ka use krte h
+
+  //character arrays ki tarah strings ke last meh bhi null character '\0' hota h.
+
+  
+
+
+
   return 0;
 }
