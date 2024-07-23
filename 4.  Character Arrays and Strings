@@ -404,6 +404,38 @@ Ex - string name = "love";
 
 output - lov
 
+.find() --> used to find one string within another string.
+
+EX-
+string str1 = "yaar tera superstar desi kalakaar";
+string str2 = "star";
+
+//The code checks if the substring str2 is present in the string str1 and prints "Found" if it is, otherwise it prints "Not Found".
+//npos -- no position found
+if(str1.find(str2) == string :: npos){
+//not found
+cout<<"Not Found"<<endl;
+} else {
+cout<<"Found"<<endl;
+}
+
+output -- found
+
+
+.compare() --> used to compare two strings whether they are equal or not. Agar dono ko compare krne ke baad 0(zero) aa jaye toh matlab strings equal h, wrna nhi h.
+
+Ex - 
+string str1 = "Hello";
+string str2 = "Hello";
+
+if(str1.compare(str2) == 0){
+  cout<<"Matching"<<endl;
+} else {
+  cout<<"Not matching"<<endl;
+}
+
+output -- Matching
+
 
 
 
