@@ -2,6 +2,11 @@ QUESTIONS
 
 1.  Length of the character array!
 2.  Reverse a character array!
+3. Convert from lowercase to uppercase!
+4. Convert from uppercase to lowercase!
+5. Replace @ with space
+    input - My@name@is@Rishabh@Jain
+    output - My name is Rishabh Jain
 
 #include <iostream>
 using namespace std;
@@ -106,6 +111,8 @@ void findReverse(char ch[], int size){
   }
 }
 
+//character array(like integer array) by default "by reference" pass ho rahe hote h isliye hume array return krne ki zarorat nhi padi.
+
 int main(){
 
   char ch[100];
@@ -147,6 +154,104 @@ int main(){
 }
 
 ############################################################################################################################################
+
+Q-3 CNVERT FROM LOWERCASE TO UPPERCASE
+
+#include<iostream>
+using namespace std;
+
+void lowercaseToUppercase(char ch[], int size){
+
+  int index = 0;
+
+  while(ch[index] != '\0'){
+    if(ch[index]>='a' && ch[index]<='z'){
+      ch[index] = ch[index] - 'a' + 'A';
+    }
+    index++;
+  }
+
+}
+
+int main(){
+
+  char ch[100];
+  cin.get(ch,100);
+
+  cout<<"Before conversion --> "<<ch<<endl;
+  lowercaseToUppercase(ch,100);
+  cout<<"After conversion --> "<<ch<<endl;
+
+}
+
+#########################################################################################################################################################3
+
+4.  Uppercase to lowercase
+
+#include<iostream>
+using namespace std;
+
+void uppercaseToLowercase(char ch[], int size){
+
+  int index = 0;
+
+  while(ch[index] != '\0'){
+    if(ch[index]>='A' && ch[index]<='Z'){
+      ch[index] = ch[index] - 'A' + 'a';
+    }
+    index++;
+  }
+
+}
+
+int main(){
+
+  char ch[100];
+  cin.get(ch,100);
+
+  cout<<"Before conversion --> "<<ch<<endl;
+  uppercaseToLowercase(ch,100);
+  cout<<"After conversion --> "<<ch<<endl;
+
+}
+
+####################################################################################################################################################################
+
+5. Replace @ with space
+
+#include<iostream>
+using namespace std;
+
+void replaceCharacter(char ch[], int size){
+
+  int index = 0;
+
+  while(ch[index] != '\0'){
+    if(ch[index] == '@'){
+      ch[index] = ' ';
+    }
+    index++;
+  }
+  
+}
+
+int main(){
+
+  char ch[100];
+  cin.getline(ch,100);
+
+  cout<<"Before replacing --> "<<ch<<endl;
+
+  replaceCharacter(ch,100);
+
+  cout<<"After replacing --> "<<ch<<endl;
+
+}
+
+########################################################################################################################################################
+
+
+
 
 
 
