@@ -314,6 +314,9 @@ int main(){
   //creation
   string name;
 
+  //empty string
+  string temp ="";
+
   //input
   cin>>name;
 
@@ -335,10 +338,77 @@ int main(){
 
   }
 
-  //character array meh hum "cin.getline()" ka use krte h whereas strings meh hum "getline()"
-  //ka use krte h
+  //character array meh hum "cin.getline()" ka use krte h whereas strings meh hum "getline()" ka use krte h
 
   //character arrays ki tarah strings ke last meh bhi null character '\0' hota h.
+
+
+
+UTILITY FUNCTIONS IN A STRING
+
+stringname.length() --> tells us the number of characters in a string.
+
+stringname.empty() --> tells us whether a string is empty or not. 
+            if string is empty --> 1 
+            if string is not empty --> 0
+
+stringname.at(indexnumber) --> tells us string ke particular index pr konsi value h.
+     ex - stringname.at(2);
+
+stringname.front() --> tells us the first character of the string.
+
+stringname.back() --> tells us the last character of the string.
+
+append() --> used for combining 2 strings.
+Ex - string str1 = "Rishabh";
+     string str2 = "Jain";
+
+     str1.append(str2);  //str2 ko str1 meh add krdo
+     cout<<str1<<endl;
+
+output -- RishabhJain
+
+stringname.erase() --> udes to erase a part of the string.
+
+Ex - string description = "This is a car";
+     //4th index se 3 characters erase krdo.
+     description.erase(4,3);
+     cout<<description<<endl;
+
+output -- This a car
+
+stringname.insert() --> used to insert one string between another string.
+
+Ex - string name = "Love Babbar";
+     string middle = " Kumar";
+
+     //name wali string meh 5th index pr middle wali string ko insert krdo
+     name.insert(5,middle);
+     cout<<name<<endl;
+
+output -- Love Kumar Babbar
+
+stringname.push_back(' ') --> Adds the corresponding character at the end of the string.
+
+Ex - string name = "love";
+     name.pushback('R');
+     cout<<name<<endl;
+
+output - loveR
+
+stringname.pop_back() --> removes the last character from the end.
+
+Ex - string name = "love";
+     name.pop_back();
+     cout<<name<<endl;
+
+output - lov
+
+
+
+
+
+
 
   
 
