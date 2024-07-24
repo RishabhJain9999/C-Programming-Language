@@ -306,6 +306,10 @@ int main(){
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                                                             STRINGS
 
+QUESTIONS
+
+1. (LEETCODE - 1047) Remove all adjacent duplicates in string
+
 #include<iostream>
 using namespace std;
 
@@ -446,6 +450,34 @@ cout<<description.substr(8,2)<<endl;
 
 output - is
 
+
+1. Leetcode - 1047) Romove all adjacent duplicates in string
+
+//We will create a new string(ans) jo initially empty hogi. Hum abse pehle first character ko new string meh add kr deenge. Uske baad hum check karenge ki jo original string ka 2nd
+//character ha vo agarnew string(ans) ke rightmost character ke equal ha toh ans(string) meh add kr deenge and agar equal nhi h toh ans(string) se pop kr deenge.
+class Solution {
+public:
+    string removeDuplicates(string s) {
+
+        string ans = "";
+        int index = 0;
+
+        while(index<s.length()){
+            //ans string ka rightmost character and string s ka current character agar same ha
+            //ans.length()>0 -yeh humne isliye likha h kyoki agar answer string ki length 0 hue toh, then we would be checking for '-1' index which is an invalid index.
+            if(ans.length()>0 && ans[ans.length()-1] == s[index]){
+                //pop from ans string
+                ans.pop_back();
+            } else {
+                //push into ans string
+                ans.push_back(s[index]);
+            }
+            index++;
+        }
+       return ans;
+
+    }
+};
 
 
 
