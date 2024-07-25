@@ -311,6 +311,7 @@ QUESTIONS
 1. (LEETCODE - 1047) Remove all adjacent duplicates in string
 2. (Leetcode - 1910) Remove all occurrences of a substring
 3. (Leetcode - 680) Valid Palindrom-2
+4. (Leetcode - 647) Palindromic Substrings
 
 
 
@@ -551,6 +552,43 @@ public:
 };
 
 ##############################################################################################################################
+
+4. (Leetcode - 647) Palindromic Substrings
+
+class Solution {
+public:
+
+    int expand(string s, int i, int j){
+        int count = 0;
+
+        while((i>=0 && j<s.length())  && s[i] == s[j]){
+            count++;
+            i--;
+            j++;
+        }
+        return count;
+    }
+   
+    int countSubstrings(string s) {
+        int totalCount = 0;
+
+        for(int center=0;center<s.length();center++){
+
+            //odd ka ans 
+            int odd = expand(s, center, center);
+
+            //even ka ans
+            int even = expand(s, center, center+1);
+
+            //V.V.V.IMP - Using "totalCount = odd + even;" only keeps the counts from the current iteration, resetting totalCount 
+            //each time. This results in the final count being the number of palindromic substrings found in the last iteration only, 
+            // which is incorrect.
+            totalCount = totalCount + odd + even;
+        }
+
+        return totalCount;
+    }
+};
 
 
 
