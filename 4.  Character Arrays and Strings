@@ -309,6 +309,12 @@ int main(){
 QUESTIONS
 
 1. (LEETCODE - 1047) Remove all adjacent duplicates in string
+2. (Leetcode - 1910) Remove all occurrences of a substring
+3. (Leetcode - 680) Valid Palindrom-2
+
+
+
+####################################################################################################################
 
 #include<iostream>
 using namespace std;
@@ -451,7 +457,7 @@ cout<<description.substr(8,2)<<endl;
 output - is
 
 
-1. Leetcode - 1047) Romove all adjacent duplicates in string
+1. (Leetcode - 1047) Romove all adjacent duplicates in string
 
 //We will create a new string(ans) jo initially empty hogi. Hum abse pehle first character ko new string meh add kr deenge. Uske baad hum check karenge ki jo original string ka 2nd
 //character ha vo agarnew string(ans) ke rightmost character ke equal ha toh ans(string) meh add kr deenge and agar equal nhi h toh ans(string) se pop kr deenge.
@@ -478,6 +484,74 @@ public:
 
     }
 };
+
+##############################################################################################################################
+
+2. (Leetcode - 1910) Remove all occurrences of a substring
+class Solution {
+public:
+    string removeOccurrences(string s, string part) {
+
+        while(s.find(part) != string::npos){
+            //if inside loop, it means that part exists in a string
+            s.erase(s.find(part),part.length());
+        }
+
+        return s;
+        
+    }
+};
+
+################################################################################################################################
+
+3. (Leetcode - 680) Valid Palindrom-2
+
+class Solution {
+public:
+
+    bool checkPalindrome(string s, int i, int j){
+        while(i<j){
+            if(s[i] != s[j]){
+                return false;
+            } else {
+                i++;
+                j--;
+            }
+        }
+        return true;
+    }
+
+
+    bool validPalindrome(string s) {
+        int i = 0;
+        int j = s.length()-1;
+
+        while(i<j){
+            if(s[i] == s[j]){
+                i++;
+                j--;
+            } else {
+                //s[i] != s[j]
+                //one removal allowed
+                //check palindrome for remaining string after removal
+
+                //ith character remove
+                bool ans1 = checkPalindrome(s,i+1,j);
+
+                //jth character remove
+                bool ans2 = checkPalindrome(s,i,j-1);
+
+                return ans1 || ans2;
+            }     
+        }
+
+        return true;
+        
+    }
+};
+
+##############################################################################################################################
+
 
 
 
