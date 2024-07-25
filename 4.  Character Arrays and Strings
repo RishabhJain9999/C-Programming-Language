@@ -575,9 +575,12 @@ public:
         for(int center=0;center<s.length();center++){
 
             //odd ka ans 
+            //isme center ki jagah i and j bhi le skte h.
+            //int j=i;
             int odd = expand(s, center, center);
 
             //even ka ans
+            //int j = i+1;
             int even = expand(s, center, center+1);
 
             //V.V.V.IMP - Using "totalCount = odd + even;" only keeps the counts from the current iteration, resetting totalCount 
